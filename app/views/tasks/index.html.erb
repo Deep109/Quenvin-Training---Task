@@ -1,0 +1,19 @@
+<h1>Hello Payboy People</h1>
+<p>My first paragraph is about how Im struggling with the training.</p>
+<%# this page should show all task%>
+<h3><%= link_to '+ Create New Task', new_task_path %></h3>
+
+&nbsp;
+
+<h2 style="color:#155EEF;">Total record: <%= @tasks.count %></h2>
+
+<% @tasks.each do |task| %>
+    <tr>
+     <hr>
+     <h3><th><%= task.id %>.</th>
+     <th> <%= link_to task.title, task_path(task) %></th></h3>
+     <th> <p style="color:#667085;"><%= task.description %></p> </th>
+     <th><%= link_to "edit", edit_task_path(task) %> -</th>
+     <th><%= link_to 'delete', task_path(task), method: :delete %></th>
+    </tr>
+<% end %>

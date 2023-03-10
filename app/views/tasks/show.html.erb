@@ -1,0 +1,31 @@
+<h1 style="color:#155EEF;"><%= @task.title %></h1>
+<h3 style="color:#2970FF;"><%= @task.description %></h3>
+<p>
+  <%= link_to '+ Add subtask', new_task_subtasks_path(@task) %>
+</p>
+<hr>
+<table>
+ <thead>
+     <th>id</th>
+     <th>User story</th>
+     <th>Story points</th>
+     <th>Status</th>
+ </thread>
+
+ <tbody>
+    <% @task.subtasks.each do |task| %>
+        <tr>
+          <td><%= task.id %></td>
+          <td><%= task.user_story %></td>
+          <td><%= task.story_points %></td>
+          <td><%= task.status %></td>
+        </tr>
+    <% end %>
+ </tbody>
+
+</table>
+<hr>
+<input type="checkbox" id="Status" name="Finished" value="Finished">
+<label for="Status">To-do task</label><br>
+<input type="checkbox" id="Status" name="Finished" value="Finished">
+<label for="Status">To-do task</label><br>
