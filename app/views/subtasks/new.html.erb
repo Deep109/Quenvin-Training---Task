@@ -1,12 +1,3 @@
 <h1 style="color:blue;">New Subtask</h1>
-<%= simple_form_for [@task, @subtask] do |f| %>
-    <%= f.input :user_story %>
-    &nbsp;
-    <%= f.input :story_points, as: :float %>
-    &nbsp;
-    <%= f.input :status, collection: ["Pending","Complete"] %>
-    &nbsp;
-    <hr>
-    <%= f.button :submit %>
 
-  <% end %>
+<%= render partial: 'subtasks/form' %>

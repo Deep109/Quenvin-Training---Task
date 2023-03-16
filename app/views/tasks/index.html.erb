@@ -10,10 +10,13 @@
 <% @tasks.each do |task| %>
     <tr>
      <hr>
-     <h3><th><%= task.id %>.</th>
+     <h3><th><%= task.id %></th>
      <th> <%= link_to task.title, task_path(task) %></th></h3>
      <th> <p style="color:#667085;"><%= task.description %></p> </th>
-     <th><%= link_to "edit", edit_task_path(task) %> -</th>
-     <th><%= link_to 'delete', task_path(task), method: :delete %></th>
+
+     <td> <%= link_to "Edit", edit_task_path(task) %> </td>
+
+     <td> <%= button_to "Delete", task_path(task), method: :delete %></td>
+
     </tr>
 <% end %>
