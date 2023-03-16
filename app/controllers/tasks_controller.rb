@@ -17,7 +17,6 @@ class TasksController < ApplicationController
         else
             render :new, status: :unprocessable_entity
         end
-
     end
 
     def show
@@ -37,10 +36,8 @@ class TasksController < ApplicationController
     end
 
     def destroy
-        if @task.destroy(task_params)
-            redirect_to tasks_path(@task)
-        else
-            "DIE"
+        if @task.destroy
+            redirect_to task_path(@task), notice: 'Task has been deleted successfully.'
         end
     end
 
